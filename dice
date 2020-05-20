@@ -1,0 +1,37 @@
+import os 
+import random
+
+clear = lambda: os.system('cls')
+
+dice = 0
+cnt = 0
+
+spin = random.randint(0,30)
+
+d,s = eval(input("How many dice do you want?\nHow many sides are on the dices?\nEx: (3,6)\n"))
+
+set_of_numbers = []
+
+for sets in range(0,d):
+  set_of_numbers.append([])
+
+run = True
+while run:
+  cnt += 1
+  if cnt == spin:
+    spin = random.randint(0,30)
+    cnt = 0
+    if dice == d - 1:
+      run = False
+    else:
+      dice += 1
+  else:
+    set_of_numbers[dice] = random.randint(0, s)
+
+  clear()
+  
+  if d > 1:
+    print(f"""{d} dices with {s} sides\n{set_of_numbers}""")
+  else:
+    print(f"""{d} dice with {s} sides\n{set_of_numbers}""")
+input('done')
