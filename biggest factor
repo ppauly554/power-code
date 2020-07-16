@@ -1,0 +1,35 @@
+MAX = 10000
+NUM = 0
+BIGGEST = [[0],[0]]
+TEMP = [[0], [0]]
+FACTORS = [[0], [0]]
+while NUM != MAX + 1:
+    if len(BIGGEST[1]) < len(FACTORS[1]):
+        BIGGEST = FACTORS
+    # make BIGGEST the biggest factor group
+    
+    FACTORS = [[NUM],[]]
+    # make FACTORS list
+    
+    MULTIPLIER = NUM
+    # make the multiplyer equal to the number
+    
+    while MULTIPLIER != 0:
+        if NUM/MULTIPLIER == NUM//MULTIPLIER:
+            FACTORS[1].append(MULTIPLIER)
+        # check if dividing by the multiplier results in a whole number
+        # if so the add that to the factors list
+            
+        MULTIPLIER -= 1
+        # go to the next multiplier
+    
+    '''
+    if TEMP != BIGGEST:
+        print(BIGGEST)
+    '''
+    # uncomment this to see the biggest factors in order
+    
+    TEMP = BIGGEST
+    
+    NUM += 1
+print(f'''The biggest factor group out of {MAX} is {BIGGEST[0][0]} with {len(BIGGEST[1])} factors\n{BIGGEST[1]}''')
