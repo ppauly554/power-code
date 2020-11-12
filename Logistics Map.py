@@ -5,10 +5,13 @@
 
 growth = lambda r, x: r*x*(1-x)
 
+
+# /* changable variables
 top = 10 # the amount of trials
 
 rate = 5
 Xn = .5
+# */
 
 for iter in range(top):
 	result = growth(rate, Xn)
