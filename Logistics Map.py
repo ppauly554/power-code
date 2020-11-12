@@ -3,7 +3,7 @@
 #r is a constant rate of growth
 #Xn is a percentage of maximum population from 0 to 1
 
-growth = lambda r, x: r*x(1-x)
+growth = lambda r, x: r*x*(1-x)
 
 top = 10 # the amount of trials
 
